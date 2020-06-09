@@ -1,0 +1,167 @@
+body {
+    background-color: #272626;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: lightgreen;
+}
+
+#submitMeme {
+    margin: 50px;
+    text-align: center;
+    z-index: -1;
+}
+
+img {
+    position: inherit;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+}
+
+
+.row {
+    display: flex;
+}
+
+.column {
+    float: left;
+    text-align: center;
+}
+
+.left {
+    width: 40%;
+    height: 500px;
+}
+
+.right {
+    width: 60%;
+    height: 500px;
+}
+
+#memeForm {
+    margin-top: 25px;
+}
+
+#topInfo {
+    margin-top: 25px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+#topMemeText {
+    visibility: hidden;
+}
+
+#bottomInfo {
+    margin-top: 200px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+#bottomMemeText {
+    visibility: hidden;
+}
+
+#contain {
+    position: relative;
+    text-align: center;
+}
+
+#topDiv {
+    position: absolute;
+    text-align: center;
+    margin-left: 25%;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 1px black;
+    top: 5px;
+}
+
+#bottomDiv {
+    position: absolute;
+    text-align: center;
+    margin-left: 25%;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 1px black;
+    bottom: 5px;
+}
+
+#submitBtn {
+    margin-top: 15px;
+    margin-right: 5px;
+    height: 50px;
+    width: 50px;
+    visibility: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: green;
+    color: white;
+    outline: none;
+}
+
+#removeBtn {
+    margin-top: 15px;
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+    visibility: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: red;
+    color: white;
+    outline: none;
+}
+
+#completedMemesDiv {
+    position: relative;
+}
+
+.newDiv {
+    position: relative;
+    display: inline-block;
+    height: 150px;
+    width: 250px;
+    margin: 5px;
+    text-align: center;
+}
+
+.newBottomDiv {
+    position: absolute;
+    bottom: 2px;
+    margin-left: 28%;
+    font-size: 85%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 1px black;
+}
+
+.newTopDiv {
+    position: absolute;
+    top: 2px;
+    font-size: 85%;
+    margin-left: 28%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 1px black;
+}
+
+.newRemoveBtn {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: red;
+    color: white;
+    outline: none;
+}
