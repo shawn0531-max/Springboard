@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(44, 42, 42);
+}
+form {
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#inputText {
+    font-size: 20px;
+}
+
+.col-sm {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newImg {
+    height: 200px;
+    width: 250px;
+    margin-bottom: 10px;
+}
