@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}Delete{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Feedback</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      {% if session['user'] %}
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/logout">Log Out</a>
+      </div>
+      {% else %}
+        <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/register">Register</a>
+        <a class="nav-item nav-link" href="/login">Log In</a>
+        </div>
+      {% endif %}
+    </div>
+  </nav>
+<div class="container col-4">
+    <form action="/feedback/{{feedback.id}}/delete" method="POST">
+        {{form.hidden_tag()}}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        {% endfor %}
+        <button id='outBtn' class="btn btn-success mt-3">Delete</button>
+    </form>
+</div>
+{% endblock %}

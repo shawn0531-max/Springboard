@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Feedback</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      {% if session['user'] %}
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/logout">Log Out</a>
+      </div>
+      {% else %}
+        <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/register">Register</a>
+        <a class="nav-item nav-link" href="/login">Log In</a>
+        </div>
+      {% endif %}
+    </div>
+  </nav>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Flask Feedback!</h1>
+    <p class="lead">Here you can contribute any feedback you have about Flask.</p>
+    <hr class="my-4">
+    <p class="mb-4"><b>Please sign up to get started or login to post more feedback</b></p>
+    <a class="btn btn-primary btn-lg d-inline" href="/register" role="button">Sign Up</a>
+    <a class="btn btn-primary btn-lg d-inline ml-4" href="/login" role="button">Login</a>
+</div>
+{% endblock %}

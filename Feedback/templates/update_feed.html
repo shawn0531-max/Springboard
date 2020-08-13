@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+
+{% block title %}Update Feedback{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Feedback</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    {% if session['user'] %}
+    <div class="navbar-nav mr-auto">
+        <a class="nav-item nav-link" href="/users/{{user.username}}/feedback/add">Add Feedback</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/users/{{user.username}}/delete">Delete Profile</a>
+        <a class="nav-item nav-link" href="/logout">Log Out</a>
+    </div>
+    {% else %}
+        <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="/register">Register</a>
+        <a class="nav-item nav-link" href="/login">Log In</a>
+        </div>
+    {% endif %}
+    </div>
+</nav>
+<div class="container col-4">
+    <h3 class="my-4">Update your feedback</h3>
+    <form action="/feedback/{{feedback.id}}/update" method="POST">
+        {{form.hidden_tag()}}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        <span>
+            <b>{{field.label}}:</b>
+            {{field (class='form-control')}}
+    
+            {% for error in field.errors %}
+                <small class="form-text text-danger">
+                    {{error}}
+                </small>
+            {% endfor %}
+        </span>
+        {% endfor %}
+        <button id='signBtn' class="btn btn-success mt-3">Update</button>
+    </form>
+</div>
+{% endblock %}
