@@ -1,0 +1,132 @@
+/* game board table */
+body {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+#game {
+  width: 100%;
+  height: 80%;
+}
+
+#board {
+  width: 70%;
+  margin-left: 15%;
+  height: 100%;
+  margin-top: 10%;
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px rgba(255, 255, 0, 0.829);
+  background-color: rgba(255, 255, 0, 0.829);
+  margin: 0px;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  
+}
+
+.y0 {
+  animation-duration: 2s;
+  animation-name: drop0;
+}
+@keyframes drop0 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.y1 {
+  animation-duration: 2s;
+  animation-name: drop1;
+}@keyframes drop1 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.y2 {
+  animation-duration: 2s;
+  animation-name: drop2;
+}
+@keyframes drop2 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.y3 {
+  animation-duration: 2s;
+  animation-name: drop3;
+}
+@keyframes drop3 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.y4 {
+  animation-duration: 2s;
+  animation-name: drop4;
+}
+@keyframes drop4 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.y5 {
+  animation-duration: 2s;
+  animation-name: drop5;
+}
+@keyframes drop5 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.player1 {
+  background-color: red;
+}
+.player2 {
+  background-color: blue;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: rgb(167, 159, 114);
+}

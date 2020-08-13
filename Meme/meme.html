@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meme.css">
+    <title>Meme Generator</title>
+</head>
+<body>
+    <h1>Meme Generator</h1>
+    <div class="row">
+        <div class="column left">
+            <form action="" id="submitMeme">
+                <div id="contain">
+                    <img id="image" src=""><div id="topDiv"></div><div id ="bottomDiv"></div>
+                </div>
+                <input type="submit" id="submitBtn" value="&#10003;">
+                <input type="button" id="removeBtn" value="X">
+            </form>
+        </div>
+        <div class="column right">
+            <form action="" id="memeForm">
+                <input type="text" placeholder="Link to Picture" id="link">
+                <input type="submit" value="Use Picture" id="pictureBtn">
+            </form>
+            <div id="topInfo">
+                <input type="text" placeholder="Text at top of meme" id="topMemeText">
+            </div>
+            <div id="bottomInfo">
+                <input type="text" placeholder="Text at bottom of meme" id="bottomMemeText">
+            </div>
+        </div>
+    </div>
+    <div id="completedMemesDiv">
+
+    </div> 
+    <script src="meme.js"></script>
+</body>
+</html>
