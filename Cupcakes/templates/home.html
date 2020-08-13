@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Cupcakes</title>
+</head>
+<body>
+    <div class="container col-3 mt-3">
+        <h2>Cupcakes</h2>
+        <ul>
+            
+        </ul>
+        <div id ='divBtn'>
+
+        </div>
+    </div>
+    <div id = 'cupcake' class= 'container col-4 mt-3'>
+        <form id='add-cupcake-form'action="/api/cupcakes", method="POST">
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{field.label}}
+                {{field (class='form-control')}}
+        
+                {% for error in field.errors %}
+                    <small class="form-text text-danger">
+                        {{error}}
+                    </small>
+                {% endfor %}
+            </p>
+            {% endfor %}
+            <button id='addBtn' class="btn btn-success">Add Cupcake</button>
+        </form>
+        <form id='cancel' action="/">
+            <button id='cancelBtn' class="btn btn-danger my-1 d-inline">Cancel</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="/static/cupcakes.js"></script>
+</body>
+</html>
