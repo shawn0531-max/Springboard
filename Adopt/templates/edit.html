@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block title %}Edit Pet{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class='container col-5 d-inline-block mr-5'>
+        <h2>Pet Info</h2>
+
+        <img src="{{pet.photo_url}}" alt="" class="img-thumbnail">
+        <br>
+        <label for="name">Name: </label>
+        <p class="font-weight-bold" name='name'>{{pet.name}}</p>
+
+        <label for="species">Species: </label>
+        <p class="font-weight-bold" name='species'>{{pet.species}}</p>
+
+        <label for="name">Age: </label>
+        <p class="font-weight-bold" name='age'>{{pet.age}}</p>
+    </div>
+    <div class='container col-5 d-inline-block align-top mt-5 ml-4'>
+        <form id='edit-pet-form'action="/{{id}}", method="POST">
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{field.label}}
+                {{field (class='form-control')}}
+
+                {% for error in field.errors %}
+                    <small class="form-text text-danger">
+                        {{error}}
+                    </small>
+                {% endfor %}
+            </p>
+            {% endfor %}
+            <button class="btn btn-success">Edit Info</button>
+        </form>
+        <form action="/">
+            <button class="btn btn-danger my-1 d-inline">Cancel</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
