@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}User Details{% endblock %}
+
+{% block body %}
+<h1>{{user.f_name}} {{user.l_name}}</h1>
+<img src="{{user.image_url}}" alt="" id='avatar'>
+<form action='/users/{{user.id}}/posts/new'id='posts_form'>
+    <h2>Posts</h2>
+    <ul>
+        {% for post in posts %}
+        <li id='post_list'><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <button id='add_post' class='add'>Add Post</button>
+</form>
+<form action="/delete_{{user.id}}">
+    <button id="delete" class="remove">Delete</button>
+</form>
+<form action="/users/{{user.id}}/edit">
+    <button id='edit' class='neutral'>Edit</button>
+</form>
+<form action="/">
+    <button id='home' class='neutral'>Home</button>
+</form>
+{% endblock %}
